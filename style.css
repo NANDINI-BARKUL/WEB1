@@ -1,0 +1,569 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+/* navbar */
+.navbar{
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+.navbar::before{
+    content: "";
+    position: absolute;
+    background-color: rgba(18, 12, 71, 0.5);
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.navbar ul{
+    display: flex;
+    list-style: none;
+}
+.navbar ul li{
+    font-size: 1.1rem;
+}
+.navbar ul li a{
+    padding: 5px 20px;
+    text-decoration: none;
+    color: white;
+}
+.navbar ul li a:hover{
+    border-bottom: 2px solid yellow;
+}
+
+/* Home Section */
+#home{
+    display: flex;
+    flex-direction: column;
+    height: 530px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(12, 13, 66, 0.5);
+    color: rgb(2, 0, 8);
+}
+#home::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('bg.jpg') no-repeat center center/cover;
+    height: 700px;
+    width: 100%;
+    z-index: -1;
+    opacity: .8;
+}
+.heading{
+    color: rgb(21, 10, 70);
+    font-size: 3rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    transform: scale(1,1.3);
+}
+.wave {
+    animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;        /* Change to speed up or slow down */
+    animation-iteration-count: infinite;  /* Never stop waving :) */
+    transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+    display: inline-block;
+  }
+  
+  @keyframes wave-animation {
+      0% { transform: rotate( 0.0deg) }
+     10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+     20% { transform: rotate(-8.0deg) }
+     30% { transform: rotate(14.0deg) }
+     40% { transform: rotate(-4.0deg) }
+     50% { transform: rotate(10.0deg) }
+     60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+    100% { transform: rotate( 0.0deg) }
+  }
+  
+  
+  
+  
+  /* For demonstration purposes only: */
+  body { font-size: 3.5em }
+  h1 { font-size: 0.5em }
+
+  *,
+::after,
+::before{
+    box-sizing: border-box;
+}
+
+.bird{
+    background: url('Images/birds.svg');
+    background-size: auto 100%;
+    width: 88px;
+    height: 125px;
+    will-change: background-position;
+    animation-name: fly-cycle;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}
+
+.bird-one{
+    animation-duration: 1s;
+    animation-delay: -.5s;
+}
+
+.bird-two{
+    animation-duration: .9s;
+    animation-delay: -.75s;
+}
+
+.bird-three{
+    animation-duration: 1.25s;
+    animation-delay: -.25s;
+}
+
+.bird-four{
+    animation-duration: 1.1s;
+    animation-delay: -.5s;
+}
+
+.bird-container{
+    position: absolute;
+    top: 20%;
+    left: -10%;
+    transform: scale(0) translateX(-10vw);
+    will-change: transform;
+    animation-name: fly-right-one;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.bird-container-one{
+    animation-duration: 15s;
+    animation-delay: 0;
+}
+
+.bird-container-two{
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.bird-container-three{
+    animation-duration: 14.6s;
+    animation-delay: 9.5s;
+}
+
+.bird-container-four{
+    animation-duration: 16s;
+    animation-delay: 10.25s;
+}
+
+@keyframes fly-cycle{
+    100%{
+        background-position: -900px 0;
+    }
+}
+
+@keyframes fly-right-one{
+    0%{
+        transform: scale(.3) translateX(-10vw);
+    }
+
+    10%{
+        transform: translate(10vw, 2vh) scale(.4);
+    }
+
+    20%{
+        transform: translate(30vw, 0) scale(.5);
+    }
+
+    30%{
+        transform: translate(50vw, 4vh) scale(.6);
+    }
+
+    40%{
+        transform: translate(70vw, 2vh) scale(.6);
+    }
+
+    50%{
+        transform: translate(90vw,0) scale(.6);
+    }
+
+    60%{
+        transform: translate(110vw, 0) scale(.6);
+    }
+
+    100%{
+        transform: translate(110vw, 0) scale(.6);
+    }
+}
+
+/* Portfolio Section */
+#portfolio{
+    display: flex;
+    flex-direction: column;
+    background-color:#B3D2F7;
+}
+#portfolio h1{
+    margin: 60px;
+}
+.gallery{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.gallery img{
+    width: 360px;
+    height: 640px;
+    padding: 10px;
+    margin: 10px;
+}
+.gallery img:hover{
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Education Section */
+/*#education{
+    display: flex;
+    flex-direction: column;
+    background-color: #000000dc;
+}
+#education h1{
+    margin: 60px;
+}
+.columns{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding-left: 50px;
+}
+.box{
+    height: 200px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    margin: 10px;
+    padding: 20px;
+}
+.box h2{
+    color: yellowgreen;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+.box p{
+    color: white;
+    font-size: 1.1rem;
+}*/
+
+/* About Section */
+#about{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    height: 100%;
+}
+#about h1{
+    color: black;
+    margin: 55px;
+}
+.about{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.about img{
+    width: 500px;
+    height: 400px;
+    padding: 0px 30px;
+}
+.name{
+    padding: 10px;
+}
+.name h2{
+    font-size: 2rem;
+}
+.name p{
+    font-size: 1.2rem;
+}
+* {
+    padding: 0;
+    margin: 0;
+    
+  }
+
+ 
+  
+.waviy {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    position: relative;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0,0,0,.2));
+  }
+.waviy span {
+    position: relative;
+    display:inline;
+    font-size: 40px;
+    color:#000;
+    text-transform: uppercase;
+    animation: waviy 1s infinite;
+    animation-delay: calc(.1s * var(--i))
+  }
+  @keyframes waviy {
+    0%,40%,100% {
+      transform: translateY(0)
+    }
+    20% {
+      transform: translateY(-20px)
+    }
+  }
+
+/* Contact Section */
+#contact{
+    display: flex;
+    flex-direction: column;
+    background-color: #7fd3faef;
+}
+#contact h1{
+    margin: 50px ;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    padding: 15px 20px;
+    margin: 15px;
+    width: 40%;
+    border: none;
+    outline: none;
+    border-radius: 25px;
+    background-color:rgb(253, 215, 201);
+}
+#message{
+    margin: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color:rgb(253, 215, 201);
+}
+#submit{
+    padding: 15px 20px;
+    margin: 30px;
+    width: 15%;
+    border-radius: 20px;
+    background-color: #000000dc;
+    color: rgb(191, 240, 13);
+    border: none;
+    outline: none;
+}
+#submit:hover{
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+
+
+@media (max-width: 350px) {
+    :root {
+     
+        --penguin-skin: black;
+        --penguin-size:400px;
+    }
+  }
+
+  .penguin {
+    position: absolute;
+    margin: auto;
+    display: block;
+    margin-top: 5%;
+    right:5px;
+    width: var(--penguin-size, 400px);
+    height: var(--penguin-size, 400px);
+    z-index: 10;
+  }
+
+  .right-cheek {
+    top: 15%;
+    left: 35%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .left-cheek {
+    top: 15%;
+    left: 5%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--penguin-belly, white);
+    width: 88%;
+    height: 80%;
+    border-radius: 120% 120% 100% 100%;
+  }
+
+  .penguin-top {
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-skin, gray);
+    width: 60%;
+    height: 55%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .penguin-bottom {
+    top: 40%;
+    left: 23.5%;
+    background: var(--penguin-skin, gray);
+    width: 60%;
+    height: 55%;
+    border-radius: 70% 70% 100% 100%;
+  }
+
+  .right-hand {
+    top: 5%;
+    left: 25%;
+    background: var(--penguin-skin, black);
+    width: 30%;
+    height: 50%;
+    border-radius: 30% 30% 120% 30%;
+    transform: rotate(130deg);
+    z-index: -1;
+    animation-duration: 3s;
+    animation-name: wave;
+    animation-iteration-count: infinite;
+    transform-origin:0% 0%;
+    animation-timing-function: linear;
+  }
+
+  @keyframes wave {
+      10% {
+        transform: rotate(110deg);
+      }
+      20% {
+        transform: rotate(130deg);
+      }
+      30% {
+        transform: rotate(110deg);
+      }
+      40% {
+        transform: rotate(130deg);
+      }
+    }
+
+  .left-hand {
+    top: 0%;
+    left: 75%;
+    background: var(--penguin-skin, gray);
+    width: 30%;
+    height: 60%;
+    border-radius: 30% 30% 30% 120%;
+    transform: rotate(-45deg);
+    z-index: -1;
+  }
+
+  .right-feet {
+    top: 85%;
+    left: 60%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(-80deg);
+    z-index: -2222;
+  }
+
+  .left-feet {
+    top: 85%;
+    left: 25%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(80deg);
+    z-index: -2222;
+  }
+
+  .right-eye {
+    top: 45%;
+    left: 60%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+  }
+
+  .left-eye {
+    top: 45%;
+    left: 25%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+  }
+
+  .sparkle {
+    top: 25%;
+    left:-23%;
+    background: white;
+    width: 150%;
+    height: 100%;
+    border-radius: 50%;
+  }
+
+  .blush-right {
+    top: 65%;
+    left: 15%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .blush-left {
+    top: 65%;
+    left: 70%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .beak-top {
+    top: 60%;
+    left: 40%;
+    background: var(--penguin-beak, orange);
+    width: 20%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .beak-bottom {
+    top: 65%;
+    left: 42%;
+    background: var(--penguin-beak, orange);
+    width: 16%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  
+
+  .penguin * {
+    position: absolute;
+  }
+  
