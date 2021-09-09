@@ -264,6 +264,7 @@ html{
     flex-direction: column;
     text-align: justify;
     height: 100%;
+
 }
 #about h1{
     color: black;
@@ -285,9 +286,15 @@ html{
 .name h2{
     font-size: 2rem;
 }
-.name p{
-    font-size: 1.2rem;
-}
+    
+.word {
+        margin: auto;
+        color: white;
+        font: 700 normal 2.5em 'tahoma';
+        text-shadow: 5px 2px #222324, 2px 4px #222324, 3px 5px #222324;
+      }
+    
+
 * {
     padding: 0;
     margin: 0;
@@ -328,9 +335,29 @@ html{
     display: flex;
     flex-direction: column;
     background-color: #7fd3faef;
+    
 }
 #contact h1{
     margin: 50px ;
+}
+/*.snowflake
+{
+    animation: fall 10slinear forwards;
+    color:#fff;
+    position:absolute;
+    top: -20px;
+
+}
+@keyframes fall{
+     to{
+         transform: translateY(105vh);
+     }
+}*/
+
+
+canvas
+{
+    z-index: 2;
 }
 .form{
     display: flex;
